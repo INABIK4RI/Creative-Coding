@@ -6,10 +6,9 @@ var len = 100; // Length of each line segment
 var rules = [];
 rules[0] = {
     a: "F",
-    b: "FF+[+F-F-F]-[-F+F+F]+F+F+F+F+F"
+    b: "Ff+[+F-f-F]-[-F+f+F]+F+F+F+F+F"
 };
 
-let angleIncrement = 0;
 
 function generate() {
     len *= 0.5; // Reduce the length of each line segment
@@ -34,21 +33,26 @@ function generate() {
 }
 
 function turtle() {
-    for (let i = 0; i < sentence.length; i++) {
-        let current = sentence.charAt(i);
+    background(50);
+    resetMatrix();
+    translate(width / 2, height);
+    stroke(255, 100);
+    for (var i = 0; i < sentence.length; i++) {
+        var current = sentence.charAt(i);
+
         if (current == "F") {
-            line(0, 0, 0, -len); // Draw a line relative to the current position
-            translate(0, -len); // Move forward
+            line(0, 0, 0, -len);
+            translate(0, -len);
         } else if (current == "f") {
-            translate(0, -len); // Move forward without drawing
+            translate(0, -len);
         } else if (current == "+") {
-            rotate(angle); // Rotate clockwise
+            rotate(angle);
         } else if (current == "-") {
-            rotate(-angle); // Rotate counterclockwise
+            rotate(-angle);
         } else if (current == "[") {
-            push(); // Save the current transformation state
+            push();
         } else if (current == "]") {
-            pop(); // Restore the previous transformation state
+            pop();
         }
     }
 }
@@ -58,15 +62,8 @@ function setup() {
     angle = radians(60);
     pixelDensity(1);
     background(50);
+    turtle();
 
     var button = select('#generateButton'); // Select the button from the HTML
     button.mousePressed(generate); // Attach the event listener
-}
-
-function draw() {
-    background(50); // Clear the canvas
-    translate(width / 2, height / 2); // Move the origin to the center of the canvas
-    rotate(angleIncrement); // Rotate the entire canvas
-    angleIncrement += 0.01; // Increment the rotation angle
-    turtle(); // Draw the figure
 }
