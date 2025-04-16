@@ -63,8 +63,8 @@ function setup() {
     angle = radians(60);
     pixelDensity(1);
     background(50);
-    // createP(axiom);
     turtle();
-    var button = createButton("generate");
-    button.mousePressed(generate);
+
+    var button = select('#generateButton'); // Select the button from the HTML
+    button.mousePressed(generate); // Attach the event listener
 }
