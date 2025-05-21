@@ -27,7 +27,7 @@ function setup() {
     let keys = Array.from(map.keys());
     let start = random(keys);
     let generatedText = generateText(start, 50); // Generate 50 words
-    createP(generatedText); // Display the generated text
+    createP(generatedText);
     console.log(map);
 }
 

@@ -1,5 +1,5 @@
-let cols = 50; // Number of columns
-let rows = 50; // Number of rows
+let cols = 50;
+let rows = 50;
 let running = true;
 
 function make2DArray(cols, rows) {
