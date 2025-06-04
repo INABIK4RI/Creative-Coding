@@ -4,12 +4,10 @@
     background-color: #24f488;
     padding: 10px 20px;
     border-radius: 5px;
-    /* Make it look like a button */
     display: inline-block;
     margin: 5px;
     font-size: 16px;
     font-weight: bold;
-    /* Smooth hover effect */
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -24,12 +22,10 @@ a {
     background-color: #4ac5c3;
     padding: 10px 20px;
     border-radius: 5px;
-    /* Make it look like a button */
     display: inline-block;
-    margin: 5px;
+    margin: 2px;
     font-size: 16px;
     font-weight: bold;
-    /* Smooth hover effect */
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -43,4 +39,40 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+.link-container {
+    position: relative;
+    display: inline-block;
+    margin: 5px;
+}
+
+.preview {
+    display: none;
+    position: fixed;
+    /* Fixed position for consistent placement */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Fine-tune centering */
+    width: 600px;
+    /* Default size for larger screens */
+    height: auto;
+    z-index: 10;
+    border: 1px solid #ccc;
+    background: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.link-container:hover .preview {
+    display: block;
+}
+
+/* Media query for smaller screens (1920x1200 or smaller) */
+@media (max-width: 2560px) {
+    .preview {
+        width: 90%;
+        max-width: 250px;
+        top: 75%;
+    }
 }
