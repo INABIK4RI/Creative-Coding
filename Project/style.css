@@ -14,6 +14,7 @@
 #cloud:hover {
     background-color: #09ff00;
     transform: scale(1.05);
+    color: black;
 }
 
 a {
@@ -32,9 +33,16 @@ a {
 a:hover {
     background-color: #2aebe8;
     transform: scale(1.05);
+    color: rgb(0, 0, 0);
+}
+
+h1,
+p {
+    color: white;
 }
 
 body {
+    background-color: #1f1f1f;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -52,7 +60,7 @@ body {
     position: fixed;
     /* Fixed position for consistent placement */
     top: 50%;
-    left: 50%;
+    left: 50.5%;
     transform: translate(-50%, -50%);
     /* Fine-tune centering */
     width: 600px;
