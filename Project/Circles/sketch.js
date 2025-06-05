@@ -1,5 +1,5 @@
 let circles = [];
-let maxTries = 3000;
+let maxTries = 1000;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
